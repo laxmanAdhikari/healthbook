@@ -1,0 +1,22 @@
+/* ContentGrid.css */
+.content-grid {
+  margin-top: 20px;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: red; /* Background color for the header */
+  color: white; /* Text color for the header */
+  font-weight: bold;
+  padding: 8px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: white; /* Background color for the data rows */
+  color: black; /* Text color for the data rows */
+  font-weight: bold;
+  padding: 8px;
+}

@@ -13,16 +13,16 @@ const AcnePage: React.FC<AcneProps> = ({ onPageClick }) => {
 
   const contentData = [
     {
-      column1: 'Food 1',
-      column2: 'Health Benefits 1',
-      column3: 'How to Use 1',
-      column4: 'Composition 1',
+      food: '/images/papaya.jpg',
+      healthBenefits: 'Health Benefits 1',
+      howToUse: 'How to Use 1',
+      composition: 'Composition 1',
     },
     {
-      column1: 'Food 2',
-      column2: 'Health Benefits 2',
-      column3: 'How to Use 2',
-      column4: 'Composition 2',
+      food: '/images/papaya.jpg',
+      healthBenefits: 'Health Benefits 2',
+      howToUse: 'How to Use 2',
+      composition: 'Composition 2',
     },
     // Add more rows as needed for your content
   ];

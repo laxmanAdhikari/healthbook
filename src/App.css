@@ -52,9 +52,10 @@ body {
   flex-direction: column;
 }
 
+/* Update the .book-container styles to use flexbox */
 .book-container {
-  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 2px solid #ccc;
@@ -66,15 +67,18 @@ body {
   margin: 10px;
 }
 
+/* Update the .pages styles to use flexbox and make it take the full width */
 .pages {
-  display: flex;
+  flex: 1;
   width: 100%;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Update the .page styles to use flexbox and make it take the full width */
 .page {
   flex: 1;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,62 +97,36 @@ body {
   z-index: 2;
 }
 
+/* Update the .page-content styles to take full width and height of .page */
 .page-content {
   overflow-y: auto;
-  max-height: 100%;
   width: 100%;
-}
-.page h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  height: 100%;
 }
 
-.page p {
-  margin-bottom: 20px;
-}
+/* src/App.css */
+/* ... (existing styles) */
 
+/* Add new styles for the footer and navigation */
 .footer {
   background-color: #f0f0f0;
   padding: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Align items to the right corner */
+  align-items: center; /* Align items vertically centered */
 }
 
 .navigation {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex: 1; /* Allow the navigation to take up the remaining space */
+  justify-content: flex-end; /* Align navigation items to the right */
 }
 
 .navigation button {
   margin: 0 5px;
 }
-/* src/App.css */
-/* ... (existing styles) */
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 8px;
-  margin-top: 20px;
-}
-
-.grid-header {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: red; /* Background color for the header */
-  color: white; /* Text color for the header */
-  font-weight: bold;
-}
-
-.column {
-  padding: 8px;
-  background-color: red; /* Background color for the data rows */
-  color: white; /* Text color for the data rows */
-}
-
-.grid-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: white; /* Background color for the data rows */
-  color: red; /* Text color for the data rows */
-  font-weight: bold;
+.copy-right {
+  align-items: center;
 }

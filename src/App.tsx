@@ -47,12 +47,20 @@ const App: React.FC = () => {
 
   const getPageContent = (currentPage: number) => {
     const PageComponent = pagesData[currentPage].component;
-    return <PageComponent onPageClick={handlePageClick} />;
+    return (
+      <>
+        <PageComponent onPageClick={handlePageClick} />
+        <div className="flip-sign" onClick={handleNextPage}>
+          &#10149;
+          <div className="flip-text">Flip</div>
+        </div>
+      </>
+    );
   };
-
+  
   const contentData = [
-    { column1: "Food 1", column2: "Health Benefits 1", column3: "How to Use 1", column4: "Composition 1" },
-    { column1: "Food 2", column2: "Health Benefits 2", column3: "How to Use 2", column4: "Composition 2" },
+    { food: '/images/papaya.jpg', healthBenefits: "ertrtrtrgfgfgfdgfdgfdgfdgfgHealth Benefits 1", howToUse: "How to Use 1", composition: "Composition 1" },
+    { food: '/images/papaya.jpg', healthBenefits: "Health Benefits 2", howToUse: "How to Use 2", composition: "Composition 2" },
   ];
 
   return (
@@ -79,14 +87,14 @@ const App: React.FC = () => {
           </div>
         </div>
         <div className="footer">
+          <div className="copy-right">
+              &copy; 2023 Your Website
+          </div>
           <div className="navigation">
             <button onClick={handlePrevPage} disabled={currentPage === 0}>Previous Page</button>
             <span>Page {currentPage + 1} of {totalPages}</span>
             <button onClick={handleNextPage} disabled={currentPage === totalPages - 1}>Next Page</button>
-          </div>
-          <div className="copy-right">
-            &copy; 2023 Your Website
-          </div>
+          </div>  
         </div>
       </div>
     </div>
