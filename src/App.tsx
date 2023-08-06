@@ -75,7 +75,6 @@ const App: React.FC = () => {
         </div>
         <div className="book-container">
           <div className="pages" data-current-page={currentPage}>
-            {/* {getPageContent(currentPage)} */}
             <ContentGrid data={contentData} />
           </div>
         </div>

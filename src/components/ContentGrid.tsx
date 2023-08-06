@@ -5,11 +5,12 @@ interface ContentGridProps {
       column3: string;
       column4: string;
     }[];
+    className?: string;
   }
   
-  const ContentGrid: React.FC<ContentGridProps> = ({ data }) => {
+  const ContentGrid: React.FC<ContentGridProps> = ({ data, className }) => {
     return (
-      <div className="grid-container">
+      <div className={`grid-container ${className || ''}`}>
         <div className="grid-header">
           <div className="column">Food</div>
           <div className="column">Health Benefits</div>

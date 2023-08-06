@@ -149,6 +149,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background-color: white; /* Background color for the data rows */
-  color: blueviolet; /* Text color for the data rows */
+  color: red; /* Text color for the data rows */
   font-weight: bold;
 }
