@@ -1,38 +1,154 @@
-.App {
+/* src/App.css */
+/* @import "./components/ContentGrid.css"; */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.left-panel {
+  background-color: #f0f0f0;
+  border-right: 2px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.left-panel h2 {
+  margin-bottom: 10px;
+}
+
+.left-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-panel li {
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.left-panel li:hover {
+  background-color: #f9f9f9;
+}
+
+.header {
+  background-color: #f0f0f0;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.center-panel {
   display: flex;
   flex-direction: column;
+}
+
+.book-container {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.pages {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  padding: 16px;
+  transform-origin: left;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+.page-content {
+  overflow-y: auto;
+  max-height: 100%;
+  width: 100%;
+}
+.page h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.page p {
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation button {
+  margin: 0 5px;
+}
+/* src/App.css */
+/* ... (existing styles) */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+  margin-top: 20px;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: red; /* Background color for the header */
+  color: white; /* Text color for the header */
+  font-weight: bold;
+}
+
+.column {
+  padding: 8px;
+  background-color: red; /* Background color for the data rows */
+  color: white; /* Text color for the data rows */
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: white; /* Background color for the data rows */
+  color: blueviolet; /* Text color for the data rows */
+  font-weight: bold;
 }

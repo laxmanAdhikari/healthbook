@@ -1,0 +1,25 @@
+/* src/components/ContentGrid.css */
+.content-grid-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .content-grid-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .content-grid-table th {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .content-grid-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
