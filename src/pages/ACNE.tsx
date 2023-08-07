@@ -2,36 +2,54 @@
 import React from 'react';
 import ContentGrid from '../components/ContentGrid';
 
-interface AcneProps {
-  onPageClick: (page: number, title: string) => void;
-}
 
-const AcnePage: React.FC<AcneProps> = ({ onPageClick }) => {
-  const handlePageClick = () => {
-    onPageClick(0, 'ACNE');
-  };
-
+const AcnePage = () => {
   const contentData = [
     {
-      food: '/images/papaya.jpg',
-      healthBenefits: 'Health Benefits 1',
+      food: 'Papayas.jpg',
+      healthBenefits: 'Papaya is effective',
       howToUse: 'How to Use 1',
       composition: 'Composition 1',
     },
     {
-      food: '/images/papaya.jpg',
+      food: 'ButterSquash.jpg',
       healthBenefits: 'Health Benefits 2',
-      howToUse: 'How to Use 2',
+      howToUse: 'How to Use it',
       composition: 'Composition 2',
     },
-    // Add more rows as needed for your content
+    {
+      food: 'Peas.jpg',
+      healthBenefits: 'Health Benefits 2',
+      howToUse: 'How to Use it',
+      composition: 'Composition 2',
+    },
+    {
+      food: 'Avocados.jpg',
+      healthBenefits: 'Health Benefits 2',
+      howToUse: 'How to Use it',
+      composition: 'Composition 2',
+    },
+    {
+      food: 'PumpkinSeeds.jpg',
+      healthBenefits: 'Health Benefits 2',
+      howToUse: 'How to Use it',
+      composition: 'Composition 2',
+    },
+    {
+      food: 'Soybeans.jpg',
+      healthBenefits: 'Health Benefits 2',
+      howToUse: 'How to Use it',
+      composition: 'Composition 2',
+    },
   ];
 
   return (
     <div>
+      {/* Other content for the ACNE page */}
       <ContentGrid data={contentData} />
     </div>
   );
 };
+
 
 export default AcnePage;

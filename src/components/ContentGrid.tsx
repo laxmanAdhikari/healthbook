@@ -22,7 +22,16 @@ const ContentGrid: React.FC<ContentGridProps> = ({ data, className }) => {
       {data.map((row, index) => (
         <div key={index} className="grid-row">
           <div className="column">
-            <img src={row.food} alt="Food" width="100" height="100" />
+            {row.food.includes('.jpg') ? (
+              <img
+                src={`${process.env.PUBLIC_URL}/images/${row.food}`}
+                alt="Food"
+                className="food-image"
+                style={{ maxWidth: '100%', maxHeight: '100%', height: 'auto' }}
+              />
+            ) : (
+              row.food
+            )}
           </div>
           <div className="column">{row.healthBenefits}</div>
           <div className="column">{row.howToUse}</div>

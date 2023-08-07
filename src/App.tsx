@@ -5,13 +5,17 @@ import AcnePage from './pages/ACNE';
 import AdhdPage from './pages/ADHD';
 import AlzheimerPage from './pages/ALZHEIMER';
 import Title from './components/Title';
-import ContentGrid from './components/ContentGrid';
+
+interface PageProps {
+  onPageClick: (page: number) => void;
+}
 
 const pagesData = [
-  { title: 'ACNE', component: AcnePage },
-  { title: 'ADHD', component: AdhdPage },
-  { title: 'ALZHEIMER', component: AlzheimerPage },
+  { title: 'ACNE',paragraph:'Acne is a skin condition', component: AcnePage },
+  { title: 'ADHD',paragraph:'ADHD is...', component: AdhdPage },
+  { title: 'ALZHEIMER',paragraph:'ALZHEIMER is ..', component: AlzheimerPage },
 ];
+
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(0);
@@ -34,35 +38,14 @@ const App: React.FC = () => {
   };
 
   const getCurrentParagraph = () => {
-    // Add your paragraph content here for each page
-    if (currentPage === 0) {
-      return "Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It often causes whiteheads, blackheads, or pimples, and usually appears on the face, forehead, chest, upper back, and shoulders. Acne is most common among teenagers, but it can affect people of all ages.";
-    } else if (currentPage === 1) {
-      return "ADHD stands for Attention Deficit Hyperactivity Disorder. It is a neurodevelopmental disorder that affects both children and adults. People with ADHD may have difficulty paying attention, staying organized, and controlling impulsive behaviors. Treatment for ADHD often includes medication, therapy, and lifestyle changes.";
-    } else if (currentPage === 2) {
-      return "Alzheimer's disease is a progressive neurodegenerative disorder that affects memory, thinking, and behavior. It is the most common cause of dementia in older adults. As the disease progresses, individuals may experience confusion, mood swings, and difficulty with daily tasks. There is currently no cure for Alzheimer's disease, but treatments can help manage symptoms.";
-    }
-    return "";
+    return pagesData[currentPage].paragraph;
   };
 
-  const getPageContent = (currentPage: number) => {
-    const PageComponent = pagesData[currentPage].component;
-    return (
-      <>
-        <PageComponent onPageClick={handlePageClick} />
-        <div className="flip-sign" onClick={handleNextPage}>
-          &#10149;
-          <div className="flip-text">Flip</div>
-        </div>
-      </>
-    );
+  const getCurrentComponent = () => {
+    const CurrentPageComponent = pagesData[currentPage].component as React.FC<PageProps>;
+    return <CurrentPageComponent onPageClick={handlePageClick} />;
   };
   
-  const contentData = [
-    { food: '/images/papaya.jpg', healthBenefits: "ertrtrtrgfgfgfdgfdgfdgfdgfgHealth Benefits 1", howToUse: "How to Use 1", composition: "Composition 1" },
-    { food: '/images/papaya.jpg', healthBenefits: "Health Benefits 2", howToUse: "How to Use 2", composition: "Composition 2" },
-  ];
-
   return (
     <div className="app-container">
       <div className="left-panel">
@@ -79,11 +62,11 @@ const App: React.FC = () => {
       </div>
       <div className="center-panel">
         <div className="header">
-          <Title title={getCurrentTitle()} paragraph={getCurrentParagraph()} />
+        <Title title={getCurrentTitle()} paragraph={getCurrentParagraph()} />
         </div>
         <div className="book-container">
           <div className="pages" data-current-page={currentPage}>
-            <ContentGrid data={contentData} />
+            {getCurrentComponent()}
           </div>
         </div>
         <div className="footer">

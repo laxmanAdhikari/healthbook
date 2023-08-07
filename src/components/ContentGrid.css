@@ -1,6 +1,14 @@
-/* ContentGrid.css */
+/* src/App.css */
+
+/* ... (existing styles) */
+
 .content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
   margin-top: 20px;
+  border-collapse: collapse;
+  box-sizing: border-box; /* Add this line to fix alignment */
 }
 
 .grid-header {
@@ -9,7 +17,23 @@
   background-color: red; /* Background color for the header */
   color: white; /* Text color for the header */
   font-weight: bold;
+}
+
+.grid-header .column {
+  /* Make sure the .column style inside .grid-header doesn't affect the header row */
   padding: 8px;
+  background-color: red; /* Background color for the header cells */
+  color: white; /* Text color for the header cells */
+}
+
+.column {
+  padding: 8px;
+  background-color: white;
+  color: black;
+  width: 100%;
+  word-wrap: break-word;
+  border: 1px solid #000; /* Add border to data cells */
+  text-align: center; /* Center-align text in cells */
 }
 
 .grid-row {
@@ -18,5 +42,4 @@
   background-color: white; /* Background color for the data rows */
   color: black; /* Text color for the data rows */
   font-weight: bold;
-  padding: 8px;
 }
