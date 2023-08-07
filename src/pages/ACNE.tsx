@@ -10,7 +10,7 @@ const AcnePage = () => {
       imageCaption: 'Papaya',
       healthBenefits: 'Papaya promotes elimination of waste products through the urine, reducing the accumulation of impurities on the skin.High in vitamin A, it helps to build healthy skin.',
       howToUse: 'Tropical Fruit Salad: combine chopped papaya,pineapple,kiwi,bannana and mango, and the juice of 1-2 freshly squeezed oranges',
-      composition: 'Fresh Papayas Carbohydrate: 14g Fat:0g Protein: 1g Sodium: 4mg Vitamin A: 1,531 IU Vitamin C:86.5mg Calcium: 33.6mg',
+      composition:'Fresh Papayas\nCarbohydrate: 14g\nFat: 0g\nProtein: 1g\nSodium: 4mg\nVitamin A: 1,531 IU\nVitamin C: 86.5mg\nCalcium: 33.6mg'
     },
     {
       food: 'ButterSquash.jpg',
@@ -38,7 +38,13 @@ const AcnePage = () => {
       imageCaption: 'Pumpkin Seeds',
       healthBenefits: 'Papaya promotes elimination of waste products through the urine, reducing the accumulation of impurities on the skin.High in vitamin A, it helps to build healthy skin.',
       howToUse: 'Tropical Fruit Salad: combine chopped papaya,pineapple,kiwi,bannana and mango, and the juice of 1-2 freshly squeezed oranges',
-      composition: 'Fresh Papayas Carbohydrate: 14g Fat:0g Protein: 1g Sodium: 4mg Vitamin A: 1,531 IU Vitamin C:86.5mg Calcium: 33.6mg',
+      composition: `'Fresh Papayas
+                     Carbohydrate: 14g Fat:0g
+                     Protein: 1g 
+                     Sodium: 4mg 
+                     Vitamin A: 1,531 IU 
+                     Vitamin C:86.5mg 
+                     Calcium: 33.6mg'`,
     },
     {
       food: 'Soybeans.jpg',

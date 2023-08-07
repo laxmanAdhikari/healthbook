@@ -37,7 +37,11 @@ const ContentGrid: React.FC<ContentGridProps> = ({ data, className }) => {
           </div>
           <div className="column">{row.healthBenefits}</div>
           <div className="column">{row.howToUse}</div>
-          <div className="column">{row.composition}</div>
+          <div className="column composition-column">
+            {row.composition.split('\n').map((line, index) => (
+              <div key={index}>{line}</div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
