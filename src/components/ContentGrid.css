@@ -4,7 +4,7 @@
 
 .content-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 8px;
   margin-top: 20px;
   border-collapse: collapse;
@@ -17,6 +17,7 @@
   background-color: red; /* Background color for the header */
   color: white; /* Text color for the header */
   font-weight: bold;
+  box-sizing: border-box
 }
 
 .grid-header .column {
@@ -24,6 +25,7 @@
   padding: 8px;
   background-color: red; /* Background color for the header cells */
   color: white; /* Text color for the header cells */
+  box-sizing: border-box
 }
 
 .column {
@@ -31,15 +33,24 @@
   background-color: white;
   color: black;
   width: 100%;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   border: 1px solid #000; /* Add border to data cells */
   text-align: center; /* Center-align text in cells */
+  box-sizing: border-box; /* Include padding and border in cell's width */
+  text-align: justify;
+}
+
+.composition-column {
+  white-space: pre-line; /* Preserve line breaks and white spaces */
 }
 
 .grid-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  overflow-wrap: break-word;
   background-color: white; /* Background color for the data rows */
   color: black; /* Text color for the data rows */
   font-weight: bold;
+  box-sizing: border-box; /* Include padding and border in cell's width */
 }
+

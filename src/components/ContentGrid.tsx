@@ -3,6 +3,7 @@ import '../components/ContentGrid.css'
 interface ContentGridProps {
   data: {
     food: string;
+    imageCaption: string;
     healthBenefits: string;
     howToUse: string;
     composition: string;
@@ -22,16 +23,17 @@ const ContentGrid: React.FC<ContentGridProps> = ({ data, className }) => {
       {data.map((row, index) => (
         <div key={index} className="grid-row">
           <div className="column">
-            {row.food.includes('.jpg') ? (
-              <img
-                src={`${process.env.PUBLIC_URL}/images/${row.food}`}
-                alt="Food"
-                className="food-image"
-                style={{ maxWidth: '100%', maxHeight: '100%', height: 'auto' }}
-              />
-            ) : (
-              row.food
-            )}
+              {row.food.includes('.jpg') ? (
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/${row.food}`}
+                  alt="Food"
+                  className="food-image"
+                  style={{ maxWidth: '100%', maxHeight: '100%', height: 'auto' }}
+                />
+              ) : (
+                row.food
+              )}
+              <div className='image-caption'>{row.imageCaption}</div>
           </div>
           <div className="column">{row.healthBenefits}</div>
           <div className="column">{row.howToUse}</div>
